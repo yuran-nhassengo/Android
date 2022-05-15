@@ -14,10 +14,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Bundle bundle = new Bundle();
+        bundle.putString("dados","Ola Mundo");
+
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
                     .setReorderingAllowed(true)
-                    .add(R.id.framento, ExemploFragment.class, null)
+                    .add(R.id.framento, ExemploFragment.class,bundle)
                     .commit();
         }
 
